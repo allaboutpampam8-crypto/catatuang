@@ -142,11 +142,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-15 sm:h-16 flex items-center justify-between gap-2 sm:gap-4 pt-1 sm:pt-0">
           {/* Logo & Brand */}
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-md shadow-blue-500/25 shrink-0">
-              <Wallet className="w-4 h-4 sm:w-5 sm:h-5" />
-            </div>
+            <img
+              src="/icon-192.png"
+              alt="CatatUang Logo"
+              className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm shrink-0 rounded-lg"
+            />
             <div>
-              <span className="font-black text-base sm:text-lg tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="font-black text-base sm:text-lg tracking-tight bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 bg-clip-text text-transparent">
                 CatatUang
               </span>
             </div>
