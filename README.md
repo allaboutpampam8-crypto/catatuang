@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CatatUang - Aplikasi Pencatat Keuangan Pribadi Bulanan
 
-## Getting Started
+Aplikasi website modern, cepat, dan responsif untuk mencatat pemasukan dan pengeluaran setiap bulan, memantau batas anggaran (*budgeting*), visualisasi grafik arus kas, serta mengelola saldo dompet/rekening secara pribadi.
 
-First, run the development server:
+---
 
+## 🚀 Fitur Utama
+
+1. **Dashboard Rekap Bulanan**:
+   - Total Pemasukan & Pengeluaran bulan berjalan.
+   - Arus Kas Bersih (*Net Savings* / Surplus / Defisit).
+   - Persentase perbandingan dengan bulan sebelumnya.
+   - Total saldo akumulasi seluruh dompet & rekening bank aktif.
+2. **Visualisasi Interaktif**:
+   - *Donut Chart*: Distribusi persentase pengeluaran berdasarkan kategori.
+   - *Bar Chart*: Tren perbandingan pemasukan vs pengeluaran harian sepanjang bulan.
+3. **Pencatatan Transaksi Cepat**:
+   - Catat pemasukan (*income*) atau pengeluaran (*expense*).
+   - Dukungan nominal Rupiah otomatis, tanggal transaksi, dompet/rekening, kategori, dan catatan.
+4. **Riwayat & Filter Transaksi**:
+   - Pencarian real-time berdasarkan kata kunci catatan/kategori.
+   - Filter berdasarkan tipe transaksi, kategori, dan dompet.
+   - Aksi Edit dan Hapus transaksi.
+   - **Ekspor CSV**: Unduh data transaksi per bulan dengan 1 klik.
+5. **Target Anggaran Bulanan (*Budgeting*)**:
+   - Tetapkan batas belanja per kategori untuk bulan berjalan.
+   - *Progress bar* status pemakaian:
+     - 🟢 Hijau (< 80%)
+     - 🟡 Kuning (80% - 99%)
+     - 🔴 Merah (Melebihi budget / *Over budget*)
+6. **Manajemen Dompet & Rekening**:
+   - Pisahkan dana di Tunai/Dompet Fisik, Rekening Bank (BCA, Mandiri, dll.), dan E-Wallet (GoPay, OVO, ShopeePay).
+   - Saldo terkalkulasi otomatis secara real-time.
+7. **Kustomisasi Kategori**:
+   - Tambah kategori baru dengan beragam pilihan ikon (*Lucide Icons*) dan warna label kustom.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router, React 19, TypeScript)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Visualisasi Grafik**: [Recharts](https://recharts.org/)
+- **Database**: SQLite (disimpan lokal di `prisma/dev.db`)
+- **ORM**: [Prisma ORM](https://www.prisma.io/)
+
+---
+
+## 📦 Cara Menjalankan Aplikasi
+
+### 1. Menjalankan Server Development
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Buka browser di [http://localhost:3000](http://localhost:3000).
+
+### 2. Menjalankan Mode Production
+```bash
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Mengelola Database (Opsional)
+Jika ingin melihat dan mengedit data langsung lewat UI Prisma Studio:
+```bash
+npx prisma studio
+```
+Jika ingin mereset atau mengisi ulang data awal (seed):
+```bash
+npx tsx prisma/seed.ts
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 Dokumentasi PRD
+Spesifikasi lengkap kebutuhan produk dapat dilihat pada file [PRD.md](PRD.md).
