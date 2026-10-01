@@ -30,7 +30,6 @@ import { CategoryIcon } from "@/components/CategoryIcon";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { PinLockScreen } from "@/components/PinLockScreen";
 import { ChangePinModal } from "@/components/ChangePinModal";
-import Link from "next/link";
 import { Lock, KeyRound } from "lucide-react";
 
 export default function Home() {
@@ -168,21 +167,19 @@ export default function Home() {
       <header className="sticky top-0 z-40 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md border-b border-neutral-200/80 dark:border-neutral-800/80 pt-[env(safe-area-inset-top,0px)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-15 sm:h-16 flex items-center justify-between gap-2 sm:gap-4 pt-1 sm:pt-0">
           {/* Logo & Brand */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
             <img
               src="/icon-192.png"
               alt="CatatUang Logo"
               className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm shrink-0 rounded-lg"
             />
-            <div>
-              <span className="font-black text-base sm:text-lg tracking-tight bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 bg-clip-text text-transparent">
-                CatatUang
-              </span>
-            </div>
+            <span className="font-black text-sm sm:text-lg tracking-tight bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 bg-clip-text text-transparent">
+              CatatUang
+            </span>
           </div>
 
           {/* Month / Period Picker: Compact for mobile */}
-          <div className="flex items-center gap-0.5 sm:gap-1 bg-neutral-100 dark:bg-neutral-800/90 p-0.5 sm:p-1 rounded-2xl border border-neutral-200/60 dark:border-neutral-700/60">
+          <div className="flex items-center gap-0.5 sm:gap-1 bg-neutral-100 dark:bg-neutral-800/90 p-0.5 sm:p-1 rounded-2xl border border-neutral-200/60 dark:border-neutral-700/60 shrink-0">
             <button
               type="button"
               onClick={handlePrevMonth}
@@ -192,7 +189,7 @@ export default function Home() {
               <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
 
-            <div className="flex items-center gap-1 px-1.5 sm:px-2.5 text-[11px] sm:text-xs font-bold text-neutral-800 dark:text-neutral-200 whitespace-nowrap">
+            <div className="flex items-center gap-1 px-1 sm:px-2.5 text-[11px] sm:text-xs font-bold text-neutral-800 dark:text-neutral-200 whitespace-nowrap">
               <Calendar className="w-3 h-3 text-blue-500 shrink-0 hidden xs:inline" />
               <span>
                 {MONTH_NAMES[selectedMonth - 1]} {selectedYear}
@@ -220,24 +217,15 @@ export default function Home() {
             )}
           </div>
 
-          {/* Right Actions: Demo Link, Lock, Theme Toggle & Desktop Add Button */}
-          <div className="flex items-center gap-1.5 sm:gap-2">
-            <Link
-              href="/demo"
-              title="Buka Mode Sandbox Demo"
-              className="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-1.5 rounded-xl border border-purple-200 dark:border-purple-800/80 bg-purple-50/60 dark:bg-purple-950/40 hover:bg-purple-100 dark:hover:bg-purple-900/40 text-xs font-semibold text-purple-700 dark:text-purple-300 transition-colors shadow-xs"
-            >
-              <span className="text-sm">🎭</span>
-              <span className="hidden sm:inline">Mode Demo</span>
-            </Link>
-
+          {/* Right Actions: Lock, Change Pin, Theme Toggle & Desktop Add Button */}
+          <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
             <button
               type="button"
               onClick={() => setIsChangePinOpen(true)}
               title="Ubah PIN Keamanan"
               className="p-1.5 sm:p-2 rounded-xl text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
             >
-              <KeyRound className="w-4 h-4" />
+              <KeyRound className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
 
             <button
@@ -249,7 +237,7 @@ export default function Home() {
               title="Kunci Aplikasi"
               className="p-1.5 sm:p-2 rounded-xl text-neutral-500 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
             >
-              <Lock className="w-4 h-4" />
+              <Lock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
 
             <ThemeToggle />

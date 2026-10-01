@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Lock, Unlock, ArrowRight, Delete, KeyRound, Check, ShieldCheck } from "lucide-react";
-import Link from "next/link";
+import { Lock, Delete } from "lucide-react";
 
 interface PinLockScreenProps {
   onUnlock: () => void;
@@ -208,20 +207,6 @@ export function PinLockScreen({ onUnlock }: PinLockScreenProps) {
           >
             <Delete className="w-5 h-5" />
           </button>
-        </div>
-
-        {/* Link to Demo Mode */}
-        <div className="pt-2 w-full border-t border-neutral-900 flex flex-col items-center space-y-2">
-          <Link
-            href="/demo"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-neutral-900/90 hover:bg-neutral-800 border border-neutral-800 text-xs font-semibold text-neutral-300 hover:text-white transition-all group shadow-sm"
-          >
-            <span>🎭 Ingin mencoba? Buka Versi Demo</span>
-            <ArrowRight className="w-3.5 h-3.5 text-blue-400 group-hover:translate-x-0.5 transition-transform" />
-          </Link>
-          <span className="text-[10px] text-neutral-500">
-            Versi demo menggunakan database terpisah dan bebas dicoba tanpa PIN
-          </span>
         </div>
       </div>
     </div>

@@ -18,10 +18,8 @@ import {
   ArrowDownRight,
   Sparkles,
   RefreshCw,
-  Lock,
   Info,
 } from "lucide-react";
-import Link from "next/link";
 import { MONTH_NAMES, formatRupiah, formatDateIndo } from "@/lib/formatters";
 import { SummaryCards } from "@/components/SummaryCards";
 import { ChartsView } from "@/components/ChartsView";
@@ -161,24 +159,22 @@ export default function DemoPage() {
       <header className="sticky top-0 z-40 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md border-b border-neutral-200/80 dark:border-neutral-800/80 pt-[env(safe-area-inset-top,0px)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-15 sm:h-16 flex items-center justify-between gap-2 sm:gap-4 pt-1 sm:pt-0">
           {/* Logo & Brand with Demo Badge */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
             <img
               src="/icon-192.png"
               alt="CatatUang Logo"
               className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm shrink-0 rounded-lg"
             />
-            <div className="flex items-center gap-2">
-              <span className="font-black text-base sm:text-lg tracking-tight bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent">
-                CatatUang
-              </span>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
-                Demo
-              </span>
-            </div>
+            <span className="font-black text-sm sm:text-lg tracking-tight bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent">
+              CatatUang
+            </span>
+            <span className="px-1.5 py-0.2 sm:px-2 sm:py-0.5 rounded-full text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800 shrink-0">
+              Demo
+            </span>
           </div>
 
           {/* Month / Period Picker */}
-          <div className="flex items-center gap-0.5 sm:gap-1 bg-neutral-100 dark:bg-neutral-800/90 p-0.5 sm:p-1 rounded-2xl border border-neutral-200/60 dark:border-neutral-700/60">
+          <div className="flex items-center gap-0.5 sm:gap-1 bg-neutral-100 dark:bg-neutral-800/90 p-0.5 sm:p-1 rounded-2xl border border-neutral-200/60 dark:border-neutral-700/60 shrink-0">
             <button
               type="button"
               onClick={handlePrevMonth}
@@ -188,8 +184,8 @@ export default function DemoPage() {
               <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
 
-            <div className="px-1.5 sm:px-2.5 py-0.5 text-center min-w-[95px] sm:min-w-[125px]">
-              <span className="text-xs sm:text-sm font-bold text-neutral-900 dark:text-neutral-100 tracking-tight whitespace-nowrap">
+            <div className="px-1 sm:px-2.5 text-center min-w-[70px] sm:min-w-[110px]">
+              <span className="text-[11px] sm:text-xs font-bold text-neutral-900 dark:text-neutral-100 tracking-tight whitespace-nowrap">
                 {MONTH_NAMES[selectedMonth - 1]} {selectedYear}
               </span>
             </div>
@@ -216,25 +212,16 @@ export default function DemoPage() {
           </div>
 
           {/* Right Action buttons */}
-          <div className="flex items-center gap-1.5 sm:gap-2">
+          <div className="flex items-center gap-1 sm:gap-2 shrink-0">
             <button
               type="button"
               onClick={handleResetDemo}
               title="Reset data demo ke kondisi awal"
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-neutral-50 dark:hover:bg-neutral-800 text-xs font-semibold text-neutral-700 dark:text-neutral-300 transition-colors cursor-pointer shadow-xs"
+              className="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-1.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-neutral-50 dark:hover:bg-neutral-800 text-xs font-semibold text-neutral-700 dark:text-neutral-300 transition-colors cursor-pointer shadow-xs"
             >
               <RefreshCw className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
               <span className="hidden sm:inline">Reset Demo</span>
             </button>
-
-            <Link
-              href="/"
-              title="Buka Aplikasi Utama (Pribadi)"
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 hover:opacity-90 text-xs font-bold transition-all shadow-xs"
-            >
-              <Lock className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Aplikasi Pribadi</span>
-            </Link>
 
             <ThemeToggle />
 
@@ -242,7 +229,7 @@ export default function DemoPage() {
             <button
               type="button"
               onClick={() => openAddTransaction("expense")}
-              className="hidden lg:flex items-center gap-2 px-3.5 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-2xl text-xs sm:text-sm font-bold shadow-md shadow-purple-500/20 hover:shadow-purple-500/30 transition-all cursor-pointer"
+              className="hidden lg:flex items-center gap-2 px-3.5 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-2xl text-xs sm:text-sm font-bold shadow-md shadow-purple-500/20 hover:shadow-purple-500/30 transition-all cursor-pointer ml-1"
             >
               <Plus className="w-4 h-4" />
               <span>Catat Transaksi</span>
@@ -358,13 +345,6 @@ export default function DemoPage() {
             >
               Reset Data Contoh
             </button>
-            <span className="text-neutral-300 dark:text-neutral-700">•</span>
-            <Link
-              href="/"
-              className="font-bold text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
-            >
-              Masuk ke Aplikasi Pribadi →
-            </Link>
           </div>
         </div>
       </div>
